@@ -14,8 +14,8 @@
 ## Color Codes
 | Color        | Hex     | Meaning     |
 | ------------ | ------- | ----------- |
-| Black        | #000000 | Null space  |
-| White        | #FFFFFF | Boundaries  |
+| Black        | #000000 | Boundaries  |
+| White        | #FFFFFF | Null Space  |
 | Orange       | #FF8800 | Cones       |
 | Green        | #00GG00 | Ramp        |
 | Ugly Green   | #87AD09 | Trees       |
