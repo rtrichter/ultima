@@ -1,0 +1,12 @@
+{
+    "WIDTH": 400,
+    "HEIGHT": 400,
+    "N_CONE_SAMPLES": 50,
+    "R_MAX": 100,
+    "THETA_MAX": 100,
+    "STEP_SIZE": 5,
+    "DIR_SCALAR": 5,
+    "bot_x": 130,
+    "bot_y": 110,
+    "bot_dir": 90
+}

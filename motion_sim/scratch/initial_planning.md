@@ -3,8 +3,8 @@
 # Prototype Eveolutions
 | Evolution # | Given Information    | Movement Controller  | Status        |
 | ----------- | -------------------- | -------------------- | ------------- |
-| 0           | Just boundaries      | give (x, y) position | WIP
-| 1           | 100% accurate vision | give (x, y) position | Not Attempted |
+| 0           | Just boundaries      | give (x, y) position | Prototyped    |
+| 1           | Add obstacles        | give (x, y) position | Not Attempted |
 | 2           | 100% accurate vision | tank control         | Not Attempted | 
 | 3           | 100% accurate vision | PID control          | Not Attempted |
 | 4           | Add Ramp             | PID control          | Not Attempted |
@@ -35,4 +35,3 @@ Detect
 # Pathfinding
 Need to steer away from things that are close  
 Steer towards things that are farther  
-

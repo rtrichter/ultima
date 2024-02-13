@@ -6,6 +6,7 @@ pwm_arduino/compile_commands.json
 
 motion_sim/venv
 **/*.pyc
+**/__pycache__
 
 # ignore tmp
 **/[Tt]mp*
