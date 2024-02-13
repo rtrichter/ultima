@@ -6,7 +6,7 @@ import time
 
 N_CONE_SAMPLES = 50
 R_MAX = 400
-THETA_MAX = 40 * np.pi / 180
+THETA_MAX = 80 * np.pi / 180
 THETA = np.linspace(-THETA_MAX, THETA_MAX, N_CONE_SAMPLES)
 
 WIDTH = 400
@@ -79,11 +79,11 @@ def get_target_direction(
     return theta[location]
 
 
-
 def get_polar_coords(
         theta: np.ndarray((N_CONE_SAMPLES)),
         bot_xy: tuple[int, int],
-        track: np.ndarray((HEIGHT, WIDTH))
+        track: np.ndarray((HEIGHT, WIDTH)),
+        bot_dir: float
         ) -> np.ndarray((2, N_CONE_SAMPLES)):
     radii = []
     weight = []
@@ -95,8 +95,8 @@ def get_polar_coords(
                 radii[i].append(R_MAX)
                 weight[i].append(PixelType.NULL)
                 continue
-            x = int(bot_xy[0] + r * np.cos(theta[i]))
-            y = int(bot_xy[1] + r * np.sin(theta[i]))
+            x = int(bot_xy[0] + r * np.cos(bot_dir + theta[i]))
+            y = int(bot_xy[1] + r * np.sin(bot_dir + theta[i]))
             if track[y][x] == 188:
                 continue
             w = Pixel.get_weight(track[y][x])
@@ -110,23 +110,26 @@ def get_polar_coords(
 
 
 def traverse():
-    STEP_SIZE = 10
+    STEP_SIZE = 5
     track = init_track("assets/frog.png")
     # bot_xy = (263, 144)
     bot_xy = [198, 116]
+    bot_dir = 0
     while True:
         cv2.imshow("traversing", track)
         cv2.waitKey(0)
-        polar = get_polar_coords(THETA, bot_xy, track)
+        polar = get_polar_coords(THETA, bot_xy, track, bot_dir)
         direction = get_target_direction(THETA, polar[0], polar[1])
         for i in range(STEP_SIZE):
-            x = int(bot_xy[0] + i * np.cos(direction))
-            y = int(bot_xy[1] + i * np.sin(direction))
+            x = int(bot_xy[0] + i * np.cos(direction + bot_dir))
+            y = int(bot_xy[1] + i * np.sin(direction + bot_dir))
             print(x, y)
             track[y][x] = 188
             track[y+1][x] = 188
-        bot_xy[0] = bot_xy[0] + STEP_SIZE * np.cos(direction)
-        bot_xy[1] = bot_xy[1] + STEP_SIZE * np.sin(direction)
+        bot_xy[0] = bot_xy[0] + STEP_SIZE * np.cos(direction + bot_dir)
+        bot_xy[1] = bot_xy[1] + STEP_SIZE * np.sin(direction + bot_dir)
+        bot_dir += direction
+        print(bot_dir)
     cv2.destroyAllWindows()
 
 
