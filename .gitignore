@@ -1,0 +1,11 @@
+pwm_arduino/lib
+pwm_arduino/compile_commands.json
+
+**/*.cache
+**/*.pio
+
+motion_sim/venv
+**/*.pyc
+
+# ignore tmp
+**/[Tt]mp*
