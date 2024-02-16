@@ -14,5 +14,7 @@ class PixelType:
     }
 
     @classmethod
-    def get_weight(cls, bgr: int) -> PixelTypes:
+    def get_weight(cls, bgr: tuple) -> PixelTypes:
+        if type(bgr) is not tuple:
+            bgr = tuple(bgr)
         return cls.INT_2_PIXEL_TYPE[bgr]

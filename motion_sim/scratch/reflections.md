@@ -13,6 +13,7 @@
 ## Native  
 - enum.Enum
 - time (visualization)
+- json
 
 # Things Learned
 Images use indices img[y][x] NOT img[x][y]   
