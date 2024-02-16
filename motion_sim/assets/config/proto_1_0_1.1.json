@@ -1,0 +1,13 @@
+{
+    "WIDTH": 400,
+    "HEIGHT": 400,
+    "N_CONE_SAMPLES": 50,
+    "R_MAX": 100,
+    "THETA_MAX": 100,
+    "STEP_SIZE": 5,
+    "DIR_SCALAR": 5,
+    "X_INITIAL": 330,
+    "Y_INITIAL": 150,
+    "THETA_INITIAL": -90,
+    "TRACK_FILENAME": "assets/tracks/track.png"
+}

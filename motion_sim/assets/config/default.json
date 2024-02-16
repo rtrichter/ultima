@@ -6,7 +6,8 @@
     "THETA_MAX": 100,
     "STEP_SIZE": 5,
     "DIR_SCALAR": 5,
-    "bot_x": 130,
-    "bot_y": 110,
-    "bot_dir": 90
+    "X_INITIAL": 330,
+    "Y_INITIAL": 150,
+    "THETA_INITIAL": -90,
+    "TRACK_FILENAME": "assets/tracks/track.png"
 }
